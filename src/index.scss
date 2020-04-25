@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito|Quicksand");
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.header {
+  font-family: "Quicksand", sans-serif;
+  color: #dedede;
+}
