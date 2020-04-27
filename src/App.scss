@@ -14,23 +14,19 @@
     width: 85%;
     height: 85%;
 
-    &.active {
-      background: rgb(42, 32, 32);
-      background: linear-gradient(
-        342deg,
-        rgba(42, 32, 32, 1) 0%,
-        rgba(173, 173, 173, 0.33657212885154064) 100%
-      );
-
-      -webkit-box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
-      box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
-    }
-
     .landing-component {
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 50%;
+      position: relative;
+
+      &.exit-active {
+        opacity: 0;
+        filter: blur(5px);
+        transition: all 6s ease-in;
+        transition-delay: 4s;
+      }
 
       h1 {
         font-weight: 300;
@@ -38,6 +34,8 @@
 
       .start-button {
         padding: 0.75rem 3rem;
+        position: absolute;
+        bottom: 0;
         width: 300px;
         color: white;
         font-size: 1rem;
@@ -46,10 +44,21 @@
         -webkit-box-shadow: 28px 20px 45px -10px rgba(232, 119, 101, 0.5);
         -moz-box-shadow: 28px 20px 45px -10px rgba(232, 119, 101, 0.5);
         box-shadow: 28px 20px 45px -10px rgba(232, 119, 101, 0.5);
-        transition: background-color 0.2s linear;
+        transition: all 0.2s linear;
 
         &:hover {
           background-color: rgb(240, 102, 81);
+        }
+
+        &.exit {
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+
+        &.exit-active {
+          transition: all 1.2s ease-in-out;
+          opacity: 0;
         }
       }
 
@@ -57,11 +66,41 @@
         max-width: 120px;
         max-height: 120px;
         padding: 1rem 0;
+        // filter: grayscale(80%);
 
         // -webkit-box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
         // -moz-box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
         // box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
       }
     }
+  }
+
+  .game-component {
+    // height: 100%;
+    // width: 100%;
+    // background: rgb(42, 32, 32);
+    // background: linear-gradient(
+    //   342deg,
+    //   rgba(42, 32, 32, 1) 0%,
+    //   rgba(173, 173, 173, 0.33657212885154064) 100%
+    // );
+
+    // -webkit-box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
+    // -moz-box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.2);
+
+    // &.enter {
+    //   opacity: 0;
+    //   transform: scale(0.9);
+    //   -webkit-box-shadow: none;
+    //   -moz-box-shadow: none;
+    //   box-shadow: none;
+    // }
+
+    // &.enter-active {
+    //   opacity: 1;
+    //   transform: translateX(0);
+    //   transition: all 4000ms ease-out;
+    // }
   }
 }

@@ -14,6 +14,7 @@ body {
 button {
   background-color: none;
   border: none;
+  outline: none;
 
   &:hover {
     cursor: pointer;
